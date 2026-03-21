@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@vercel/config": "^0.0.40",
     "next": "16.2.0"
   },
   "devDependencies": {

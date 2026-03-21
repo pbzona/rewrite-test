@@ -1,0 +1,29 @@
+{
+  "config": {
+    "routes": [
+      {
+        "src": "^(?:\\/(.*))$",
+        "dest": "$TARGET_URL/$1",
+        "transforms": [
+          {
+            "type": "request.headers",
+            "op": "set",
+            "target": {
+              "key": "x-mintlify-host"
+            },
+            "args": "$1"
+          }
+        ],
+        "has": [
+          {
+            "type": "host",
+            "value": "(?<host>.*)"
+          }
+        ],
+        "env": [
+          "TARGET_URL"
+        ]
+      }
+    ]
+  }
+}
