@@ -7,7 +7,7 @@ export const config: VercelConfig = {
     routes.rewrite("/(.*)", `${TARGET_URL}/$1`, {
       has: [{ type: "host", value: "(?<host>.*)" }],
       requestHeaders: {
-        "x-mintlify-host": "$1",
+        "x-mintlify-host": "$host",
       },
     }),
   ],
